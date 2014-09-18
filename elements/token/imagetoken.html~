@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html"> 
+<polymer-element name="my-imagetoken" extends="my-token" attributes="imageWidth imageHeight imageUrl imageCss">
+  <template>
+    <style>
+      .image-token { width: {{width}}; height: {{height}}; background-image: {{imageBgCss}}; {{imageCss}} }
+    </style>
+    <div class="image-token" layout horizontal center center-justified><shadow></shadow></div>
+  </template>
+  <script>
+  Polymer('my-imagetoken', {
+    imageUrl: "http://placehold.it/50x50",
+    width: "150px",
+    height: "150px",
+    imageBgCss: "",
+    ready: function() {
+      this.imageBgCss = "url('" + this.imageUrl + "')";
+    }
+  });
+  </script>
+</polymer-element>

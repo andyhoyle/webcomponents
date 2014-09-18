@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="elements/token/token.html">
+    <link rel="import" href="elements/token/imagetoken.html">
+    <link rel="import" href="elements/token/flippable.html">
+    <link rel="import" href="bower_components/core-animation/core-animation.html">
+  </head>
+  <body unresolved touch-action="auto">
+<script>
+var animation = new CoreAnimation();
+animation.duration = 500;
+animation.keyframes = [
+  {opacity: 1},
+  {opacity: 0}
+];
+animation.target = document.getElementById('el');
+animation.play();
+</script>
+  <div horizontal layout>
+  <my-flippable>
+    <my-imagetoken
+	width="250px"
+	height="250px"
+	imageUrl="http://www.marshu.com/articles/images-website/articles/presidents-on-coins/nickel-coin-head.jpg"
+	imageCss="background-size: 100% 100%;"
+        textCss="background-color:rgba(200,200,200,0.6); padding: 10px;">Nickel Coin Head
+    </my-imagetoken>
+
+    <my-imagetoken
+	width="250px"
+	height="250px"
+	imageUrl="http://www.coincollectingnews.org/wp-content/uploads/2009/07/julia-tyler-first-spouse-gold-coin.jpg"
+	imageCss="background-size: 100% 100%;" >
+      <my-token textCss="background-color:rgba(200,200,200,0.6); padding: 10px;">Julia Tyler</my-token>
+    </my-imagetoken>
+  </my-flippable>
+  </div>
+
+
+  </body>
+</html>
